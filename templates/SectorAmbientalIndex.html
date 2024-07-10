@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Better Alliance</title>
+    <!-- BOX ICONS -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/CSS/estilos.css') }}">
+    <script src="{{ url_for('static', filename='JS/app.js') }}" defer></script>
+</head>
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <ul>
+            {% for category, message in messages %}
+                <li class="message-box" id="messageBox">{{ message }}</li> 
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {% endwith %}
+
+    <header>
+        <header>
+            <div class="container">
+                <p class="logo">Bienvenido {{ session['username'] if 'username' in session else 'Invitado' }}</p>
+                <nav>
+                    <a href="{{url_for('logout')}}"class="logout">Log out</a>
+                </nav>
+            </div>
+        </header>
+        <section id="hero">
+    </header>
+        <div class="menu-dashboard">
+            <!-- TOP MENU -->
+            <div class="top-menu">
+                <div class="logo">
+                    <img src="./img/logo.svg" alt="">
+                    <span>BETTER ALIANCE</span>
+                </div>
+                <div class="toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </div>
+            <!-- INPUT SEARCH -->
+            <div class="input-search">
+                <i class='bx bx-search'></i>
+                <input type="text" class="input" placeholder="Buscar">
+            </div>
+            <!-- MENU -->
+            <div class="menu">
+                <a href="{{ url_for('dashboard') }}">
+                    <div class="enlace">
+                        <i class="bx bx-grid-alt"></i>
+                        <span>Home</span>
+                    </div>
+                </a>
+                <a href="{{ url_for('SectorS') }}">
+                    <div class="enlace">
+                        <i class="bx bx-grid-alt"></i>
+                        <span>Voluntariado Salud</span>
+                    </div>
+                </a>
+                <a href="{{ url_for('SectorA') }}">
+                <div class="enlace">
+                    <i class="bx bx-grid-alt"></i>
+                    <span>Voluntariado Ambiental</span>
+                </div>
+                </a>
+                <div class="enlace">
+                    <i class="bx bx-heart"></i>
+                    <span>Favoritos</span>
+                </div>
+                <div class="enlace">
+                    <i class="bx bx-cog"></i>
+                    <span>Configuración</span>
+                </div>
+            </div>
+        </div>
+
+        <section id="vision" class="section">
+            <div class="vision-contenido">
+                <div class="vision-texto">
+                    <h2>VOLUNTARIADO AMBIENTAL</h2>
+                    <p>En cuanto al medio ambiente, nos preocupamos por el impacto que nuestras acciones tienen en el planeta. Buscamos promover prácticas sostenibles y fomentar la conciencia ambiental</p>
+                    <p>través de iniciativas y colaboraciones, aspiramos a contribuir a la preservación y restauración de nuestro entorno natural.</p>
+                    
+                </div>
+                <div class="vision-imagen">
+                    <img src="./img/vision.jpg" alt="Visión de Better Alliance">
+                </div>
+            </div>
+
+            <div class="tabla-contenido">
+                <h3>Tabla de Contenido Interactiva</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Número</th>
+                            <th>Organización</th>
+                            <th>Cuántos lugares quedan</th>
+                            <th>Detalles</th>
+                            <th>Registrarse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Organización A</td>
+                            <td>5</td>
+                            <td><a href="#" class="detalle" onclick="mostrarDetalle(0)">Ver detalles</a></td>
+                            <td><button onclick="mostrarRegistro()">Registrarse</button></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Organización B</td>
+                            <td>2</td>
+                            <td><a href="#" class="detalle" onclick="mostrarDetalle(1)">Ver detalles</a></td>
+                            <td><button onclick="mostrarRegistro()">Registrarse</button></td>
+                        </tr>
+                        <!-- Añade más filas según sea necesario -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Ventanas emergentes de detalles -->
+            <div class="popup" id="popup1">
+                <button onclick="cerrarPopup(0)">X</button>
+                <div class="popup-content">
+                    <p>Detalles de la organización 1: ..........</p>
+                </div>
+                <button onclick="mostrarRegistro()">Registrarse</button>
+            </div>
+
+            <div class="popup" id="popup2">
+                <button onclick="cerrarPopup(1)">X</button>
+                <div class="popup-content">
+                    <p>Detalles de la organización 2: ..........</p>
+                </div>
+                <button onclick="mostrarRegistro()">Registrarse</button>
+            </div>
+        </section>
+   
+
+    <!-- JavaScript para la ventana emergente -->
+    <script>
+        // Función para mostrar la ventana emergente de detalles
+        function mostrarDetalle(index) {
+            const popup = document.querySelector(`#popup${index + 1}`);
+            popup.style.display = 'block';
+        }
+
+        // Función para cerrar la ventana emergente
+        function cerrarPopup(index) {
+            const popup = document.querySelector(`#popup${index + 1}`);
+            popup.style.display = 'none';
+        }
+
+        // Función para simular la funcionalidad de registro (puedes implementar la lógica real aquí)
+        function mostrarRegistro() {
+            alert('Funcionalidad de registro aún no implementada.');
+            // Aquí puedes implementar la lógica para mostrar el formulario de registro
+        }
+    </script>
+
+</body>
+</html>

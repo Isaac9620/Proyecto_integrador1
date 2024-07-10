@@ -1,0 +1,184 @@
+ /* Estilos adicionales específicos para esta página */
+ .container {
+    display: flex;
+}
+
+.menu-dashboard {
+    width: 150px;
+    height: 100vh;
+    background: var(--bg-menu);
+    padding: 20px;
+    transition: width .3s ease;
+}
+
+.top-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.top-menu .logo {
+    display: flex;
+    align-items: center;
+}
+
+.top-menu .logo img {
+    width: 40px;
+    transition: width .3s ease;
+}
+
+.top-menu .logo span {
+    font-size: 20px;
+    margin-left: 20px;
+    display: none;
+}
+
+.top-menu .toggle {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.top-menu .toggle i {
+    font-size: 35px;
+}
+
+.input-search {
+    width: 100%;
+    background-color: var(--azul-opacidad);
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.input-search i {
+    font-size: 30px;
+    margin-right: 20px;
+}
+
+.input-search .input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 100%;
+    height: 30px;
+    color: var(--blanco);
+    font-size: 22px;
+}
+
+.menu {
+    width: 100%;
+}
+
+.enlace {
+    padding: 20px 0 20px 17px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all .3s ease;
+}
+
+.enlace:hover {
+    background: var(--azul-opacidad);
+}
+
+.enlace i {
+    margin-right: 20px;
+    font-size: 25px;
+}
+
+#vision {
+    flex: 1;
+    padding: 20px;
+    margin-top: 20px; /* Espacio arriba de la sección de visión */
+}
+
+.vision-contenido {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.vision-texto {
+    flex: 1;
+    max-width: 400px;
+}
+
+.vision-imagen {
+    flex: 1;
+    max-width: 400px;
+    margin-left: 20px;
+}
+
+.tabla-contenido {
+    margin-top: 30px;
+}
+
+.tabla-contenido h3 {
+    font-size: 1.8rem;
+    color: #184463;
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+table th {
+    background-color: #f0f0f0;
+}
+
+.detalle {
+    color: #184463;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Estilo para la ventana emergente de detalles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.popup-content {
+    margin-bottom: 10px;
+}
+
+.popup button {
+    background-color: #184463;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    float: right; /* Alinear el botón "x" a la derecha */
+}
+
+.popup button:hover {
+    background-color: #003053;
+}

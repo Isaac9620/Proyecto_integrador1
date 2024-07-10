@@ -1,0 +1,221 @@
+* {
+    box-sizing: border-box;
+}
+
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+h1{ font-size: 3.5em;}
+h2{ font-size: 2.7em;}
+h3{ font-size: 2em;}
+p{ font-size: 1.25em;}
+ul{ list-style: none;}
+li{ font-size: 1.25em;}
+
+
+body {
+    background: url(../media/Azul2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    color: #000;
+    display: flex;
+    flex-direction: column; /* Cambio la dirección de flex a columna */
+    align-items: center; /* Centra horizontalmente los elementos */
+    justify-content: center; /* Centra verticalmente los elementos */
+    min-height: 100vh; /* Cambio min-height en lugar de height */
+}
+.container{
+    max-width: 1400px;
+    margin: auto;
+    flex: 1;
+}
+
+.color-acento{ color:rgb(43, 137, 226); }
+
+header {
+    background-color: rgba(212, 223, 236, 0.855); 
+}
+header.scrolling-active {
+    background-color: rgba(245, 245, 245, 0.5); /* Ajusta el 0.5 para cambiar la transparencia */
+}
+
+header p{
+    font-size: 1.5em;
+}
+header .logo {
+    margin: 0;
+    padding: 25px 0; /* Ajuste el padding según sea necesario */
+    font-weight: bold;
+    color: rgb(5, 39, 71);
+    font-size: 1.6em;
+}
+
+header .logo, .p{
+    font-size: 1.8em;
+    transform: translate(-19%, -5%);
+}
+
+header .container{
+    display: flex;
+    flex-direction: row; /* Cambio de 'column' a 'row' para alinear elementos horizontalmente */
+    justify-content: space-between; /* Separa los elementos a los extremos del contenedor */
+    align-items: center; /* Alinea los elementos verticalmente en el centro */
+    padding: 0 30px; /* Añade padding horizontalmente para no pegar los elementos a los bordes */
+}
+
+
+header nav {
+    display: flex;
+    flex-direction: row; /* Alinea los elementos de navegación en una fila */
+    text-align: center;
+    padding-bottom: 25px;
+    font-size: 1.2em;
+}
+
+
+header a {
+    padding: 5px 12px;
+    margin: 0 10px; /* Añade espacio horizontalmente entre los enlaces */
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    display: inline-flex;
+}
+
+header a:hover{
+    color: rgb(43, 131, 226);
+    animation: 0.5s;
+}
+#mensajeRegistroContainer {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: hwb(0 100% 0%);
+    border: 1px solid #f4f0f0;
+    display: none; /* Ocultar inicialmente */
+}
+
+#mensajeRegistro {
+    margin: 0;
+}
+
+.formulario {
+    background: hwb(0 100% 0%);
+    padding: 20px;
+    width: 100%;
+    border-radius: 2%;
+    max-width: 500px;
+    margin-top: 20px; /* Ajusta este valor según sea necesario */
+}
+
+h1 {
+    text-align: center;
+    color: #1a2537;
+    font-size: 32px;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+    font-size: 20px;
+    width: 100%; /* Cambiado a 100% para ocupar el ancho completo */
+    padding: 10px;
+    border: none;
+}
+
+.input-contenedor {
+    margin-bottom: 15px;
+    border: 1px solid #dfdfdf;
+}
+
+.icon {
+    min-width: 50px;
+    text-align: center;
+    color: #dfdfdf;
+}
+
+.button {
+    border: none;
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    background: #1a2537;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: cadetblue;
+}
+
+p {
+    text-align: center;
+    font-size: 1.0em;
+}
+
+.link {
+    text-decoration: none;
+    color: #1a2537;
+    font-weight: 600;
+}
+
+.link:hover {
+    color: cadetblue;
+}
+
+@media(min-width:860px) {
+    .formulario {
+        margin-top: 50px;
+    }
+    header {
+        position: fixed;
+        width: 100%;
+    }
+
+    header .container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    header nav {
+        flex-direction: row;
+        padding-bottom: 0;
+        padding-right: 20px;
+    }
+}
+@media(min-width:860px) {
+    header {
+        position: fixed;
+        top: 0; /* Asegura que el header esté en la parte superior */
+        left: 0; /* Alinea el header a la izquierda */
+        right: 0; /* Alinea el header a la derecha */
+        width: 100%; /* Asegura que el header tenga el ancho completo */
+    }
+}
+.message-box {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.message-box h1 {
+    margin: 0;
+    font-size: 2em;
+    color: #333;
+}
+.message-box p {
+    font-size: 1.2em;
+    color: #666;
+}
+.hidden {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+

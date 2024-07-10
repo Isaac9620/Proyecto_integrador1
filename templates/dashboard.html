@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Better Alliance - Inicio</title>
+    <!-- BOX ICONS -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='/CSS/estilos.css') }}">
+    <!-- CUSTOM JS -->
+    <script src="{{ url_for('static', filename='JS/app.js') }}" defer></script>
+</head>
+<body>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <ul>
+            {% for category, message in messages %}
+                <li class="message-box" id="messageBox">{{ message }}</li> 
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {% endwith %}
+
+    <header>
+        <header>
+            <div class="container">
+                <p class="logo">Bienvenido {{ session['username'] if 'username' in session else 'Invitado' }}</p>
+                <nav>
+                    <a href="{{url_for('logout')}}"class="logout">Log out</a>
+                </nav>
+            </div>
+        </header>
+        <section id="hero">
+    </header>
+
+    <div class="menu-dashboard">
+        <!-- TOP MENU -->
+        <div class="top-menu">
+            <div class="toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </div>
+        <!-- INPUT SEARCH -->
+        <div class="input-search">
+            <i class='bx bx-search'></i>
+            <input type="text" class="input" placeholder="Buscar">
+        </div>
+        <!-- MENU -->
+        <div class="menu">
+            <a href="{{ url_for('dashboard') }}">
+                <div class="enlace">
+                    <i class="bx bx-grid-alt"></i>
+                    <span>Home</span>
+                </div>
+            </a>
+
+            <a href="{{ url_for('SectorS') }}">
+                <div class="enlace">
+                    <i class="bx bx-grid-alt"></i>
+                    <span>Voluntariado Salud</span>
+                </div>
+            </a>
+
+            <a href="{{ url_for('SectorA') }}">
+                <div class="enlace">
+                    <i class="bx bx-grid-alt"></i>
+                    <span>Voluntariado Ambiental</span>
+                </div>
+            </a>
+
+            <div class="enlace">
+                <i class="bx bx-heart"></i>
+                <span>Favoritos</span>
+            </div>
+
+            <div class="enlace">
+                <i class="bx bx-cog"></i>
+                <span>Configuración</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <section id="inicio" class="section">
+            <h1 class="titulo-grande">Better Alliance</h1>
+            <h2>             Una plataforma de voluntariado </h2>
+            <p>Better Alliance es una organización dedicada a conectar voluntarios con proyectos que necesitan apoyo. Nuestro objetivo es fomentar una comunidad de ayuda mutua y crecimiento personal a través del voluntariado.</p>
+        </section>
+
+        <section id="vision" class="section">
+            <div class="vision-contenido">
+                <div class="vision-texto">
+                    <h2>Unidos para lograr más</h2>
+                    <h1></h1>
+                    <p>Bienvenido a Better Alliance, aqui nos dedicamos a ofrecer oportunidades de voluntariado para hacer una diferencia en dos sectores importantes: la salud y el medio ambiente. Somos una plataforma comprometida con la mejora continua, enfocada en la busqueda de soluciones innovadoras para los problemas que surgen en estos dos sectores fundamentales.
+
+                        En Better Alliance, creemos en el poder del voluntariado para transformar comunidades y generar un impacto positivo duradero.
+                        
+                        Nuestra plataforma no solo se trata de ofrecer oportunidades de voluntariado, sino también de construir una comunidad comprometida con el bienestar global. Te invitamos a explorar nuestras iniciativas y programas, donde cada acción cuenta y cada voluntario desempeña un papel vital en el cambio que queremos ver en el mundo.</p>
+                </div>
+                <div class="vision-imagen">
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

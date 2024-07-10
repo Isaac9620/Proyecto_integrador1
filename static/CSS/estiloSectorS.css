@@ -1,0 +1,164 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: url(media/Gris.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    color: #000;
+    display: flex;
+    flex-direction: column; /* Cambio la dirección de flex a columna */
+    align-items: center; /* Centra horizontalmente los elementos */
+    justify-content: center; /* Centra verticalmente los elementos */
+    min-height: 100vh; /* Cambio min-height en lugar de height */
+}
+
+header {
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+}
+
+header .logo {
+    margin: 0;
+    padding: 25px 30px;
+    font-weight: bold;
+    color: rgb(36, 87, 135);
+    font-size: 1.6em;
+}
+
+header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header nav {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+header a {
+    padding: 5px 12px;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+header a:hover {
+    color: rgb(43, 131, 226);
+}
+
+.contenedor {
+    width: 100%;
+    padding: 15px;
+}
+#mensajeRegistroContainer {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: hwb(0 100% 0%);
+    border: 1px solid #f4f0f0;
+    display: none; /* Ocultar inicialmente */
+}
+
+#mensajeRegistro {
+    margin: 0;
+}
+
+.formulario {
+    background: hwb(0 100% 0%);
+    padding: 20px;
+    width: 100%;
+    border-radius: 2%;
+    max-width: 500px;
+    margin-top: 20px; /* Ajusta este valor según sea necesario */
+}
+
+h1 {
+    text-align: center;
+    color: #1a2537;
+    font-size: 40px;
+}
+
+input[type="text"],
+input[type="password"] {
+    font-size: 20px;
+    width: 100%; /* Cambiado a 100% para ocupar el ancho completo */
+    padding: 10px;
+    border: none;
+}
+
+.input-contenedor {
+    margin-bottom: 15px;
+    border: 1px solid #dfdfdf;
+}
+
+.icon {
+    min-width: 50px;
+    text-align: center;
+    color: #dfdfdf;
+}
+
+.button {
+    border: none;
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    background: #1a2537;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: cadetblue;
+}
+
+p {
+    text-align: center;
+}
+
+.link {
+    text-decoration: none;
+    color: #1a2537;
+    font-weight: 600;
+}
+
+.link:hover {
+    color: cadetblue;
+}
+
+@media(min-width:860px) {
+    .formulario {
+        margin-top: 50px;
+    }
+    header {
+        position: fixed;
+        width: 100%;
+    }
+
+    header .container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    header nav {
+        flex-direction: row;
+        padding-bottom: 0;
+        padding-right: 20px;
+    }
+}
