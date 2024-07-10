@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/estiloForm.css') }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    
+</head>
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <ul>
+            {% for category, message in messages %}
+                <li class="message-box" id="messageBox">{{ message }}</li> 
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {% endwith %}
+
+    <header>
+        <div class="container">
+            <p class="logo">Better Alliance</p>
+            <nav>
+                <a href="{{ url_for('home') }}">Página principal</a>
+                <a href="{{ url_for('registro_view') }}">Regístrate</a>
+            </nav>
+        </div>
+    </header>
+
+    <form action="{{ url_for('login') }}" method="post" class="formulario">
+        <h1>Iniciar Sesión</h1><br>
+        <div class="contenedor">
+            <div class="input-contenedor">
+                <input type="email" name="email" id="email" placeholder="Email" required>
+            </div>
+            
+            <div class="input-contenedor">
+                <input type="password" name="password" maxlength="10" id="password" placeholder="Contraseña" required>
+            </div>
+            
+            <input type="submit" value="Login" class="button">
+            <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
+            <p>¿No tienes una cuenta? <a class="link" href="{{ url_for('registro_view') }}">Regístrate</a></p>
+        </div>
+    </form>
+
+    <script>
+        setTimeout(function() {
+            var messageBox = document.getElementById('messageBox');
+            if (messageBox) { 
+                messageBox.classList.add('hidden');
+            }
+        }, 3000);
+    </script>
+</body>
+</html>

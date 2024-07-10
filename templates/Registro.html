@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesion</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/estiloForm.css') }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+</head>
+
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <ul>
+            {% for category, message in messages %}
+                <li class="message-box" id="messageBox">{{ message }}</li> 
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {% endwith %}
+    <header>
+        <div class="container">
+            <p class="logo">Better Alliance</p>
+            <nav>
+                <a href="{{url_for ('home') }}">Pagina principal</a>
+                <a href="{{url_for ('login')}}">Iniciar sesion</a>
+            </nav>
+        </div>
+    </header>
+
+    <form class="formulario" id="registroForm" action="{{ url_for ('registro_view') }}" method="post">
+
+        <h1>Registro de usuario</h1>
+        <div class="contenedor">
+
+            <div class="input-contenedor">
+                <input type="text" placeholder="Username" name="username">
+            </div>
+
+            <div class="input-contenedor">
+                <input type="email" placeholder="Correo Electronico" name="email" >
+            </div>
+
+            <div class="input-contenedor">
+                <input type="password" maxlength="10" placeholder="Contraseña" name="password">
+            </div>
+
+            <button type="submit" class="button">Registrate</button><br><br>
+            <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
+            <p>¿Ya tienes una cuenta?<a class="link" href="{{url_for ('login')}}">Iniciar Sesion</a></p>
+        </div>
+    </form>
+    <div id="mensajeRegistroContainer">
+        <p id="mensajeRegistro"></p>
+    </div>
+
+    <script>
+       setTimeout(function() {
+            var messageBox = document.getElementById('messageBox');
+            if (messageBox) { 
+                messageBox.classList.add('hidden');
+            }
+        }, 3000);
+    </script>
+
+
+</body>
+
+</html>

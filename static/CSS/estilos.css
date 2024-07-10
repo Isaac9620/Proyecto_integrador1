@@ -1,0 +1,280 @@
+/* VARIABLES */
+
+:root {
+    --blanco: #FFFFFF;
+    --gris-claro: #F0F0F0;
+    --azul-opacidad: #184463;
+    --bg-menu: #003053;
+    --texto-menu: #E0E0E0;
+    --texto-general: #333333;
+}
+
+/* Estilos para header y nav*/
+
+.container{
+    max-width: 1400px;
+    margin: auto;
+    flex: 1;
+}
+
+header {
+    background-color: rgba(212, 223, 236, 0.855); 
+}
+header.scrolling-active {
+    background-color: rgba(245, 245, 245, 0.5); /* Ajusta el 0.5 para cambiar la transparencia */
+}
+
+header p{
+    font-size: 1.5em;
+}
+header .logo {
+    margin: 0;
+    padding: 15px 0; /* Ajuste el padding según sea necesario */
+    font-weight: bold;
+    color: rgb(5, 39, 71);
+    font-size: 1.6em;
+}
+
+header .logo, .p{
+    font-size: 1.8em;
+    transform: translate(-19%, -5%);
+}
+
+header .container{
+    display: flex;
+    flex-direction: row; /* Cambio de 'column' a 'row' para alinear elementos horizontalmente */
+    justify-content: space-between; /* Separa los elementos a los extremos del contenedor */
+    align-items: center; /* Alinea los elementos verticalmente en el centro */
+    padding: 0 30px; /* Añade padding horizontalmente para no pegar los elementos a los bordes */
+}
+
+
+header nav {
+    display: flex;
+    flex-direction: row; /* Alinea los elementos de navegación en una fila */
+    text-align: center;
+    padding-bottom: 2px;
+    font-size: 1.2em;
+}
+
+
+header a {
+    padding: 5px 12px;
+    margin: 0 10px; /* Añade espacio horizontalmente entre los enlaces */
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    display: inline-flex;
+}
+
+header nav a.logout {
+    background-color: #ff4d4d; /* Color de fondo para el botón de logout */
+    color: #fff; /* Color de texto para el botón de logout */
+    padding: 10px 15px; /* Espaciado interno del botón */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+header nav a:hover {
+    color: rgb(43, 131, 226);
+    animation: 0.5s;
+}
+
+/* GENERALES */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    color: var(--texto-general);
+    background-color: var(--blanco);
+}
+
+/* LAYOUT */
+
+.menu-dashboard {
+    width: 150px;
+    height: 100vh;
+    background: var(--bg-menu);
+    padding: 20px;
+    transition: width .3s ease;
+    float: left;
+}
+
+.content {
+    margin-left: 170px; /* Ajuste dependiendo del ancho del menú */
+    padding: 20px;
+    height: 100vh;
+    overflow-y: auto;
+    background-color: var(--blanco);
+}
+
+.section {
+    background-color: var(--gris-claro);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.section h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--azul-opacidad);
+}
+
+.section p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.titulo-grande {
+    font-size: 3rem;
+}
+
+/* Vision Section */
+
+.vision-contenido {
+    display: flex;
+    align-items: center;
+}
+
+.vision-texto {
+    flex: 1;
+}
+
+.vision-texto h2 {
+    margin-bottom: 10px;
+    color: var(--azul-opacidad);
+}
+
+.vision-imagen {
+    flex: 1;
+    text-align: center;
+    background-image: url("../media/union.png");
+}
+
+.vision-imagen img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* MENU DASHBOARD */
+
+.top-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top-menu .logo {
+    display: flex;
+    align-items: center;
+}
+
+.top-menu .logo img {
+    width: 40px;
+    transition: width .3s ease;
+}
+
+.top-menu .logo span {
+    font-size: 20px;
+    margin-left: 20px;
+    color: var(--texto-menu);
+    display: none;
+}
+
+.top-menu .toggle {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.top-menu .toggle i {
+    font-size: 35px;
+    color: var(--texto-menu);
+}
+
+/* INPUT BOX */
+
+.input-search {
+    width: 100%;
+    margin: 50px 0;
+    background-color: var(--azul-opacidad);
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.input-search i {
+    font-size: 30px;
+    margin-right: 20px;
+}
+
+.input-search .input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 100%;
+    height: 30px;
+    color: var(--blanco);
+    font-size: 22px;
+    display: none;
+}
+
+/* ENLACES MENU */
+
+.menu .enlace {
+    width: 100%;
+    padding: 20px 0 20px 17px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all .3s ease;
+    color: var(--texto-menu);
+}
+
+.menu .enlace:hover {
+    background: var(--azul-opacidad);
+}
+
+.menu .enlace i {
+    margin-right: 20px;
+    font-size: 25px;
+}
+
+.menu .enlace span {
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.menu-dashboard.open {
+    width: 300px;
+}
+
+.menu-dashboard.open .top-menu .logo span {
+    display: block;
+}
+
+.menu-dashboard.open .input-search .input {
+    display: block;
+}
+
+.menu-dashboard.open .menu .enlace span {
+    opacity: 1;
+}
+
+a {
+    text-decoration: none;
+}
