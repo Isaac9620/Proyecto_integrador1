@@ -88,24 +88,35 @@
     <div class="content">
         <section id="inicio" class="section">
             <h1 class="titulo-grande">Better Alliance</h1>
-            <h2>             Una plataforma de voluntariado </h2>
-            <p>Better Alliance es una organización dedicada a conectar voluntarios con proyectos que necesitan apoyo. Nuestro objetivo es fomentar una comunidad de ayuda mutua y crecimiento personal a través del voluntariado.</p>
         </section>
 
         <section id="vision" class="section">
             <div class="vision-contenido">
                 <div class="vision-texto">
-                    <h2>Unidos para lograr más</h2>
-                    <h1></h1>
-                    <p>Bienvenido a Better Alliance, aqui nos dedicamos a ofrecer oportunidades de voluntariado para hacer una diferencia en dos sectores importantes: la salud y el medio ambiente. Somos una plataforma comprometida con la mejora continua, enfocada en la busqueda de soluciones innovadoras para los problemas que surgen en estos dos sectores fundamentales.
+                    <h2>Tabla de usuarios</h2>
+                    <table class="table table-bordered table-sm table-striped table-hover text-center" border="1">
+                        <thead>
+                            <tr>
+                                <th>username</th>
+                                <th>password</th>
+                                <th>gmail</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            {% for usuario in tablas %}
+                            <tr>
+                                <td>{{ usuario[1] }}</td>
+                                <td>{{ usuario[2] }}</td>
+                                <td>{{ usuario[3] }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                            </div>
+                            <div class="vision-imagen">
 
-                        En Better Alliance, creemos en el poder del voluntariado para transformar comunidades y generar un impacto positivo duradero.
-                        
-                        Nuestra plataforma no solo se trata de ofrecer oportunidades de voluntariado, sino también de construir una comunidad comprometida con el bienestar global. Te invitamos a explorar nuestras iniciativas y programas, donde cada acción cuenta y cada voluntario desempeña un papel vital en el cambio que queremos ver en el mundo.</p>
-                </div>
-                <div class="vision-imagen">
-                </div>
-            </div>
+                            </div>
+                        </div>
         </section>
     </div>
 </body>

@@ -35,20 +35,48 @@
         <div class="contenedor">
 
             <div class="input-contenedor">
-                <input type="text" placeholder="Username" name="username">
+                <input type="text" placeholder="Nombre" name="Nombre" required>
             </div>
 
             <div class="input-contenedor">
-                <input type="email" placeholder="Correo Electronico" name="email" >
+                <input type="text" placeholder="Apellido paterno" name="Apellido_p" required>
             </div>
 
             <div class="input-contenedor">
-                <input type="password" maxlength="10" placeholder="Contraseña" name="password">
+                <input type="text" placeholder="Apellido materno" name="Apellido_m" required>
+            </div>
+
+            <div class="input-contenedor">
+                <input type="number" placeholder="Edad" name="Edad" required>
+            </div>
+
+            <div>
+                <select id="select-gender" name="Genero" required>
+                    {% for genero in generos %}
+                        <option value="{{ genero[0] }}">{{ genero[1] }}</option>
+                    {% endfor %}
+                </select>
+            </div>    
+
+            <div class="input-contenedor">
+                <input type="date" placeholder="Fecha_nac" name="Fecha_nac" required>
+            </div>
+
+            <div class="input-contenedor">
+                <input type="text" placeholder="Username" name="username" required>
+            </div>
+
+            <div class="input-contenedor">
+                <input type="email" placeholder="Correo Electronico" name="email" required>
+            </div>
+
+            <div class="input-contenedor">
+                <input type="password" maxlength="10" placeholder="Contraseña" name="password" required>
             </div>
 
             <button type="submit" class="button">Registrate</button><br><br>
             <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
-            <p>¿Ya tienes una cuenta?<a class="link" href="{{url_for ('login')}}">Iniciar Sesion</a></p>
+            <p>¿Ya tienes una cuenta?<a class="link" href="{{url_for ('login')}}"> Iniciar Sesion</a></p>
         </div>
     </form>
     <div id="mensajeRegistroContainer">

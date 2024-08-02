@@ -1,0 +1,96 @@
+*{
+    font-family: "Nunito";
+}
+.navbar-brand {
+    font-weight: 300;
+    color: #0070ba;
+    font-size: 30px;
+    transition: 0.3;
+}
+
+.navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+}
+
+.navbar-toggler:focus, .btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #000;
+}
+
+.nav-link {
+    position: relative;
+    color: #b4b5c5;
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+.nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 2rem;
+    transform: translate(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #60c1ee;
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+}
+
+.nav-link:hover::before {
+    width: 100%;
+    visibility: visible;
+}
+
+.about-img{
+    height: 100%;
+    margin-top: 30px;
+}
+
+.blue {
+    color: #0070ba;
+}
+
+.content h1{
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.content h2{
+    text-transform: uppercase;
+    font-size: 3rem;
+}
+
+.section-padding{
+    padding: 100px 0;
+}
+
+.display-5 {
+    font-family: "Libre Caslon Display";
+    font-weight: 500;
+}
+
+.lead{
+    font-family: "Libre Caslon Display";
+    font-size: 1.5rem;
+}
+
+.btn-learn{
+    text-decoration: none;
+    background-color: #60c1ee;
+    color: #000000;
+    border-radius: 5px;
+    padding: 10px 10px;
+    font-size: 1.1rem;
+}
+
+.btn-learn:hover{
+    background-color: #62a4d0;
+    color: #000;
+    text-decoration: none;
+}

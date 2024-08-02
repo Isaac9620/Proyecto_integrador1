@@ -2,102 +2,117 @@
     box-sizing: border-box;
 }
 
-
-html{
+html {
     scroll-behavior: smooth;
 }
 
-body{
+body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
-}
-h1{ font-size: 3.5em;}
-h2{ font-size: 2.7em;}
-h3{ font-size: 2em;}
-p{ font-size: 1.25em;}
-ul{ list-style: none;}
-li{ font-size: 1.25em;}
-
-
-body {
-    background: url(../media/Azul2.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-    color: #000;
+    padding: 0;
     display: flex;
-    flex-direction: column; /* Cambio la dirección de flex a columna */
-    align-items: center; /* Centra horizontalmente los elementos */
-    justify-content: center; /* Centra verticalmente los elementos */
-    min-height: 100vh; /* Cambio min-height en lugar de height */
-}
-.container{
-    max-width: 1400px;
-    margin: auto;
-    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    background: url(../media/Azul2.jpg) no-repeat center center fixed;
+    background-size: cover;
 }
 
-.color-acento{ color:rgb(43, 137, 226); }
+h1 {
+    font-size: 3.5em;
+}
+h2 {
+    font-size: 2.7em;
+}
+h3 {
+    font-size: 2em;
+}
+p {
+    font-size: 1.25em;
+}
+ul {
+    list-style: none;
+}
+li {
+    font-size: 1.25em;
+}
 
 header {
-    background-color: rgba(212, 223, 236, 0.855); 
-}
-header.scrolling-active {
-    background-color: rgba(245, 245, 245, 0.5); /* Ajusta el 0.5 para cambiar la transparencia */
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgb(212, 223, 236);
+    z-index: 1000;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente el contenido del header */
+    align-items: center; /* Centra verticalmente el contenido del header */
 }
 
-header p{
-    font-size: 1.5em;
+header.scrolling-active {
+    background-color: rgb(245, 245, 245);
 }
+
+header .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    max-width: 1400px;
+    width: 100%;
+}
+
 header .logo {
     margin: 0;
-    padding: 25px 0; /* Ajuste el padding según sea necesario */
+    padding: 25px 0;
     font-weight: bold;
     color: rgb(5, 39, 71);
     font-size: 1.6em;
 }
 
-header .logo, .p{
-    font-size: 1.8em;
-    transform: translate(-19%, -5%);
-}
-
-header .container{
-    display: flex;
-    flex-direction: row; /* Cambio de 'column' a 'row' para alinear elementos horizontalmente */
-    justify-content: space-between; /* Separa los elementos a los extremos del contenedor */
-    align-items: center; /* Alinea los elementos verticalmente en el centro */
-    padding: 0 30px; /* Añade padding horizontalmente para no pegar los elementos a los bordes */
-}
-
-
 header nav {
     display: flex;
-    flex-direction: row; /* Alinea los elementos de navegación en una fila */
-    text-align: center;
-    padding-bottom: 25px;
+    flex-direction: row;
+    align-items: center;
     font-size: 1.2em;
 }
 
-
 header a {
     padding: 5px 12px;
-    margin: 0 10px; /* Añade espacio horizontalmente entre los enlaces */
+    margin: 0 10px;
     text-decoration: none;
     font-weight: bold;
     color: black;
     display: inline-flex;
+    align-items: center; /* Asegura que el texto de los enlaces esté centrado verticalmente */
 }
 
-header a:hover{
+header a:hover {
     color: rgb(43, 131, 226);
     animation: 0.5s;
 }
+
+.container {
+    display: flex;
+    justify-content: center;
+    max-width: 1400px;
+    margin: auto;
+    padding: 10px;
+    flex: 1;
+}
+
+.color-acento {
+    color: rgb(43, 137, 226);
+}
+
 #mensajeRegistroContainer {
     margin-top: 20px;
     padding: 10px;
     background-color: hwb(0 100% 0%);
     border: 1px solid #f4f0f0;
-    display: none; /* Ocultar inicialmente */
+    display: none;
 }
 
 #mensajeRegistro {
@@ -110,7 +125,7 @@ header a:hover{
     width: 100%;
     border-radius: 2%;
     max-width: 500px;
-    margin-top: 20px; /* Ajusta este valor según sea necesario */
+    margin-top: 105px; /* Ajusta este valor según la altura del header */
 }
 
 h1 {
@@ -121,9 +136,12 @@ h1 {
 
 input[type="email"],
 input[type="password"],
-input[type="text"] {
+input[type="text"],
+input[type="date"],
+input[name="Genero"],
+input[type="number"] {
     font-size: 20px;
-    width: 100%; /* Cambiado a 100% para ocupar el ancho completo */
+    width: 100%;
     padding: 10px;
     border: none;
 }
@@ -131,12 +149,6 @@ input[type="text"] {
 .input-contenedor {
     margin-bottom: 15px;
     border: 1px solid #dfdfdf;
-}
-
-.icon {
-    min-width: 50px;
-    text-align: center;
-    color: #dfdfdf;
 }
 
 .button {
@@ -159,6 +171,29 @@ p {
     font-size: 1.0em;
 }
 
+#select-gender {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #333;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z" fill="%23333"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+#select-gender:focus {
+    border-color: #555;
+    outline: none;
+}
+
 .link {
     text-decoration: none;
     color: #1a2537;
@@ -169,53 +204,45 @@ p {
     color: cadetblue;
 }
 
-@media(min-width:860px) {
-    .formulario {
-        margin-top: 50px;
-    }
-    header {
-        position: fixed;
-        width: 100%;
-    }
-
+@media (max-width: 860px) {
     header .container {
-        flex-direction: row;
-        justify-content: space-between;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
 
     header nav {
-        flex-direction: row;
+        flex-direction: column;
         padding-bottom: 0;
-        padding-right: 20px;
+    }
+
+    .formulario {
+        margin-top: 150px; /* Ajusta este valor según sea necesario */
     }
 }
-@media(min-width:860px) {
-    header {
-        position: fixed;
-        top: 0; /* Asegura que el header esté en la parte superior */
-        left: 0; /* Alinea el header a la izquierda */
-        right: 0; /* Alinea el header a la derecha */
-        width: 100%; /* Asegura que el header tenga el ancho completo */
-    }
-}
+
 .message-box {
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    transform: translateY(140%);
 }
+
 .message-box h1 {
     margin: 0;
     font-size: 2em;
     color: #333;
 }
+
 .message-box p {
     font-size: 1.2em;
     color: #666;
 }
+
 .hidden {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
 }
-
